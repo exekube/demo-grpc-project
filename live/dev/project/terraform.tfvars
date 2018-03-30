@@ -12,6 +12,8 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
+create_static_ip_address = true
+
 dns_zones = {
   "swarm-pw" = "swarm.pw."
 }
