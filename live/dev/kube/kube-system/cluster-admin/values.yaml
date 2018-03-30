@@ -1,0 +1,6 @@
+networkPolicy:
+  enabled: true
+
+namespaces:
+  - team1
+  - team2
