@@ -29,5 +29,5 @@ release_spec = {
   chart_name    = "demo-api"
   chart_version = "0.1.1"
 
-  domain_name = "charts.flexeption.pw"
+  domain_name = "status.swarm.pw"
 }
