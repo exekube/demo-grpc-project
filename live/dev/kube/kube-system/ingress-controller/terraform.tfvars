@@ -29,6 +29,7 @@ release_spec = {
 }
 
 kubernetes_secrets = [
+  "kube-system/rbac/admin.yaml",
   "kube-system/rbac/dashboard.yaml",
 ]
 
