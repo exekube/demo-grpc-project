@@ -8,6 +8,7 @@ terragrunt = {
   dependencies {
     paths = [
       "../helm-tiller",
+      "../../kube-system/ingress-controller",
     ]
   }
 
