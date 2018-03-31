@@ -30,5 +30,5 @@ release_spec = {
   release_name  = "cluster-admin"
   chart_repo    = "exekube"
   chart_name    = "cluster-admin"
-  chart_version = "0.1.0"
+  chart_version = "0.1.1"
 }

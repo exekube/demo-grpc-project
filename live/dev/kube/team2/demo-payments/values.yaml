@@ -4,7 +4,7 @@
 replicaCount: 1
 
 networkPolicy:
-  enabled: true
+  create: true
 
 image:
   repository: ilyasotkov/demo-payments

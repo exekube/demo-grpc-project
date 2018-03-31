@@ -28,7 +28,7 @@ release_spec = {
 
   chart_repo    = "exekube"
   chart_name    = "demo-api"
-  chart_version = "0.1.1"
+  chart_version = "0.1.2"
 
   domain_name = "status.swarm.pw"
 }
