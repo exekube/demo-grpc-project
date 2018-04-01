@@ -2,12 +2,11 @@
 
 terragrunt = {
   terraform {
-    source = "/exekube-modules//helm-tiller"
+    source = "/exekube-modules//helm-initializer"
   }
 
   dependencies {
     paths = [
-      "../../cluster",
       "../../kube-system/cluster-admin",
     ]
   }
@@ -19,4 +18,4 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
-tiller_namespace = "team2"
+tiller_namespace = "team1"

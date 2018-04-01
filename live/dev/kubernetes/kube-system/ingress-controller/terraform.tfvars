@@ -7,8 +7,7 @@ terragrunt = {
 
   dependencies {
     paths = [
-      "../helm-tiller",
-      "../ingress-controller",
+      "../_helm",
     ]
   }
 
@@ -20,12 +19,10 @@ terragrunt = {
 # ↓ Module configuration (empty means all default)
 
 release_spec = {
-  enabled = true
-
-  # namespace    = "kube-system"
-  release_name = "kube-lego"
-
+  enabled       = true
+  namespace     = "kube-system"
+  release_name  = "ingress-controller"
   chart_repo    = "stable"
-  chart_name    = "kube-lego"
-  chart_version = "0.4.0"
+  chart_name    = "nginx-ingress"
+  chart_version = "0.11.1"
 }

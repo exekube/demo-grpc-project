@@ -7,8 +7,8 @@ terragrunt = {
 
   dependencies {
     paths = [
-      "../helm-tiller",
-      "../../kube-system/ingress-controller",
+      "../../cluster",
+      "../_helm",
     ]
   }
 
@@ -19,16 +19,16 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
+chart_repo = {
+  name = "exekube"
+  url  = "https://exekube.github.io/charts"
+}
+
 release_spec = {
-  enabled = true
-
-  release_name     = "demo-api"
-  namespace        = "team1"
-  tiller_namespace = "team1"
-
+  enabled       = true
+  namespace     = "kube-system"
+  release_name  = "cluster-admin"
   chart_repo    = "exekube"
-  chart_name    = "demo-api"
-  chart_version = "0.1.2"
-
-  domain_name = "status.swarm.pw"
+  chart_name    = "cluster-admin"
+  chart_version = "0.1.1"
 }

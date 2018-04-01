@@ -7,7 +7,8 @@ terragrunt = {
 
   dependencies {
     paths = [
-      "../helm-tiller",
+      "../_helm",
+      "../../kube-system/cluster-admin",
     ]
   }
 

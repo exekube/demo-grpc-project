@@ -2,12 +2,12 @@
 
 terragrunt = {
   terraform {
-    source = "/exekube-modules//helm-tiller"
+    source = "/exekube-modules//helm-release"
   }
 
   dependencies {
     paths = [
-      "../../cluster",
+      "../_helm",
     ]
   }
 
@@ -18,3 +18,12 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
+release_spec = {
+  enabled = true
+
+  release_name = "kube-lego"
+
+  chart_repo    = "stable"
+  chart_name    = "kube-lego"
+  chart_version = "0.4.0"
+}
