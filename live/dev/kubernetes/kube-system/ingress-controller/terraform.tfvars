@@ -26,3 +26,9 @@ release_spec = {
   chart_name    = "nginx-ingress"
   chart_version = "0.11.1"
 }
+
+kubernetes_secrets = [
+  "kube-system/rbac/admin.yaml",
+  "kube-system/rbac/dashboard.yaml",
+  "kube-system/kube-lego/certs.yaml",
+]
