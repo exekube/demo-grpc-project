@@ -7,6 +7,7 @@ terragrunt = {
 
   dependencies {
     paths = [
+      "../cluster-admin",
       "../_helm",
     ]
   }
@@ -28,7 +29,9 @@ release_spec = {
 }
 
 kubernetes_secrets = [
-  "kube-system/rbac/admin.yaml",
-  "kube-system/rbac/dashboard.yaml",
   "kube-system/kube-lego/certs.yaml",
 ]
+
+#  "kube-system/rbac/admin.yaml",
+#  "kube-system/rbac/dashboard.yaml",
+

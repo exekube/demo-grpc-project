@@ -7,7 +7,6 @@ terragrunt = {
 
   dependencies {
     paths = [
-      "../../cluster",
       "../_helm",
     ]
   }
@@ -30,5 +29,5 @@ release_spec = {
   release_name  = "cluster-admin"
   chart_repo    = "exekube"
   chart_name    = "cluster-admin"
-  chart_version = "0.1.1"
+  chart_version = "0.2.0"
 }
