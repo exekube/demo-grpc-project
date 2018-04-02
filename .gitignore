@@ -2,6 +2,7 @@
 **/owner.json
 .config
 live/**/secrets/**
+live/**/secrets.bak
 !live/**/secrets/.keep
 !live/**/secrets/terraform.tfvars
 !live/**/secrets/permissions.tf
