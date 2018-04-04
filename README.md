@@ -1,4 +1,4 @@
-# Demo project
+# Demo Exekube Project: demo-grpc-project
 
 > :warning: This is a work in progress
 
