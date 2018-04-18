@@ -1,0 +1,19 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: grpc-exekube-us-cert
+  namespace: team1
+spec:
+  secretName: grpc-exekube-us-cert
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-stg
+  # commonName: example.com
+  dnsNames:
+  - dev.grpc.exekube.us
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - dev.grpc.exekube.us
