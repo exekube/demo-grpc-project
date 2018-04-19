@@ -5,7 +5,7 @@ terraform {
 variable "secrets_dir" {}
 
 module "grpc_server" {
-  source           = "/exekube-modules/helm-release-v2"
+  source           = "/exekube-modules/helm-release"
   tiller_namespace = "team2"
   client_auth      = "${var.secrets_dir}/team2/helm-tls"
 

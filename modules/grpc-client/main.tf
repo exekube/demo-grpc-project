@@ -6,7 +6,7 @@ variable "secrets_dir" {}
 variable "domain_name" {}
 
 module "grpc_client" {
-  source           = "/exekube-modules/helm-release-v2"
+  source           = "/exekube-modules/helm-release"
   tiller_namespace = "team1"
   client_auth      = "${var.secrets_dir}/team1/helm-tls"
 
