@@ -17,4 +17,8 @@ module "grpc_client" {
   chart_repo    = "exekube"
   chart_name    = "demo-api"
   chart_version = "0.1.2"
+
+  kubernetes_yaml = [
+    "networkpolicy.yaml",
+  ]
 }

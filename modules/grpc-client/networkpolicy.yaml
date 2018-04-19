@@ -1,0 +1,20 @@
+# Allow domain validation to get TLS certificate
+# TODO: don't use such a permissive networkpolicy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-cert-manager-le-stg
+  namespace: team1
+spec:
+  podSelector:
+    matchLabels:
+      certmanager.k8s.io/managed: "true"
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from: []
+    ports: []
+  egress:
+  - to: []
+    ports: []
