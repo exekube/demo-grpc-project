@@ -10,7 +10,9 @@ module "gke_cluster" {
   project_id         = "${var.project_id}"
   serviceaccount_key = "${var.serviceaccount_key}"
 
-  main_compute_zone = "europe-west1-d"
+  main_compute_zone  = "europe-west1-d"
+  node_type          = "n1-standard-1"
+  initial_node_count = 2
 
   oauth_scopes = [
     "https://www.googleapis.com/auth/compute",
@@ -18,6 +20,4 @@ module "gke_cluster" {
     "https://www.googleapis.com/auth/logging.write",
     "https://www.googleapis.com/auth/monitoring",
   ]
-
-  initial_node_count = 2
 }
