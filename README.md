@@ -1,33 +1,33 @@
-# Demo Exekube Project: demo-grpc-project
+# demo-grpc-project
 
-> :warning: This is a work in progress
+This is a demo project built with the [Exekube framework](https://github.com/exekube/exekube)
 
-The demo project uses the Exekube framework to demonstrate a deployment of
+> :warning:
+>
+> This is a work in progress
+>
+> :warning:
+
+---
+
+If you are new to Exekube, follow the *Getting Started Tutorial* at https://exekube.github.io/exekube/in-practice/getting-started
+
+## What we're building
+
+Our goal is to create a production-like GKE cluster, then deploy these applications onto it:
 
 - A gRPC server
-- A REST client app to our gRPC server
+- A REST HTTP(S) client app that will return a response from the gRPC server when you `curl https://YOURDOMAIN.com/payments/status`
 
-onto the :cloud: Google Cloud Platform, resulting in:
+## How to configure the project
 
-1. A fully-configured Google Cloud Platform *project* (each for every environment -- dev, stg, prod, etc.) with configured networking and security
-2. A fully-configured GKE (Kubernetes) *cluster*
-3. A *gRPC server* app (Helm release)
-4. A public *REST API* (Helm release) app that is a client to our gRPC server, and responds with `{"status":"ok","message":"200 OK"}` to our https://status.YOURDOMAIN.com/payments/status requests
+To get this working, you'll need to:
 
-## Test manually
+1. Set the *GCP project* name base in `docker-compose.yaml`:
+    ```yaml
+    TF_VAR_project_id: ${ENV:?err}-demo-apps-296e23
+    ```
+2. Configure project-scoped modules in the `modules` directory: all settings that will be *the same across all environments of the project*.
+3. Configure module imports for the *dev* environment in the `live/dev` directory. We use [Terragrunt](/) to do module imports for us.
 
-We want to be able to contact our publicly available REST API (`demo-api` Helm release), which will contact our gRPC server, (`demo-payments` Helm release) which will finally try to get a message back from <http://httpstat.us/200>
-
-```sh
-curl https://status.YOURDOMAIN.com/payments/status
-
-{"status":"ok","message":"200 OK"}
-```
-
-## Getting Started
-
-### Requirements
-
-- Have *Docker for X* installed on your local machine.
-
-... to be continued
+... to be continued ...
