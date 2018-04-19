@@ -2,23 +2,16 @@ terraform {
   backend "gcs" {}
 }
 
-// We use `helm template` since we want to run this before installing Tiller
-resource "null_resource" "administration_tasks" {
-  provisioner "local-exec" {
-    command = <<EOF
-    helm template --values ${path.module}/values.yaml \
-    --execute templates/rolebinding-admins.yaml \
-    ${path.module}/chart \
-    | kubectl apply -f - \
-    && sleep 7 \
-    && helm template --values ${path.module}/values.yaml \
-    ${path.module}/chart > ${path.module}/generated.yaml \
-    && kubectl apply -f ${path.module}/generated.yaml
-EOF
-  }
+variable "secrets_dir" {}
 
-  provisioner "local-exec" {
-    when    = "destroy"
-    command = "kubectl delete -f ${path.module}/generated.yaml"
-  }
+module "administration_tasks" {
+  // Note the `helm-template-release` (Tillerless Helm)
+  source = "/exekube-modules/helm-template-release"
+
+  release_name      = "administration-tasks"
+  release_namespace = "kube-system"
+
+  chart_repo    = "exekube"
+  chart_name    = "administration-tasks"
+  chart_version = "0.3.0"
 }

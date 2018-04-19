@@ -1,16 +1,15 @@
 # List namespaces to create
 # Use 'secure: true' to add deny-all networkpolicy
 namespaces:
-- name: team1
-  secure: false
-- name: team2
-  secure: true
+  - name: team1
+    secure: true
+  - name: team2
+    secure: true
 
 # Assign user and serviceAccounts as cluster-admins
 clusterAdmins:
-  create: true
-  users:
-    - projectowner@dev-demo-project-4d6725.iam.gserviceaccount.com
+  create: false
+  users: []
 
 # List roles to limit things you can view / modify with the dashboard
 dashboardPermissions:
@@ -18,5 +17,5 @@ dashboardPermissions:
   clusterRoles:
     - view
     - secret-lister
-    - cluster-viewer
+    - cluster-object-viewer
     # - cluster-admin

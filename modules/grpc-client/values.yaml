@@ -6,7 +6,7 @@ networkPolicy:
 
 payments:
   namespace: team2
-  serviceName: "grpc-server-demo-payments"
+  serviceName: grpc-server-demo-payments
   port: 50051
 
 replicaCount: 1
@@ -24,7 +24,7 @@ service:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: nginx
   hosts:
     - ${domain_name}
   tls:
