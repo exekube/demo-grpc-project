@@ -3,8 +3,12 @@
 namespaces:
   - name: team1
     secure: true
+    labels:
+      name: team1
   - name: team2
     secure: true
+    labels:
+      name: team2
 
 # Assign cluster-admin role to users
 clusterAdmins:

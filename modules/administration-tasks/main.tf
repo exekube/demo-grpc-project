@@ -19,10 +19,10 @@ module "administration_tasks" {
   // Note the `helm-template-release` module (Tillerless Helm)
   source = "/exekube-modules/helm-template-release"
 
-  release_name      = "adm"
+  release_name      = "admin"
   release_namespace = "kube-system"
 
   chart_repo    = "${helm_repository.exekube.name}"
   chart_name    = "administration-tasks"
-  chart_version = "0.3.0"
+  chart_version = "0.3.1"
 }
