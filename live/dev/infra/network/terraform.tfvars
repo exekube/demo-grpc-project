@@ -12,10 +12,17 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
-dns_zones = {
-  grpc-exekube-us = "grpc.exekube.us."
-}
+create_static_ip_address = false
 
-dns_records = {
-  grpc-exekube-us = "*.grpc.exekube.us."
-}
+dns_zones = {}
+
+# dns_zones = {
+#   grpc-exekube-us = "grpc.exekube.us."
+# }
+
+dns_records = {}
+
+# dns_records = {
+#   grpc-exekube-us = "*.grpc.exekube.us."
+# }
+
